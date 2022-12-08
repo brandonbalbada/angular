@@ -1,0 +1,48 @@
+$main: #111111
+$white: #dddddd
+$secondary: #707070 
+$accent: #3b3b3b
+
+@mixin flex ($dir)
+    display: flex
+    flex-flow: $dir wrap
+    align-items: center
+    @if $dir == 'column'
+        justify-content: center
+        align-items: flex-start
+header
+    @include flex (row)
+    justify-content: space-between
+    box-shadow: 1px 0px 20px rgba($main,.25)
+    padding: 0px 70px
+    img
+        height: 50px
+        width: auto
+    nav
+        @include flex(row)
+        position: relative
+        a 
+            color: $secondary
+            text-decoration: none
+            text-transform: uppercase            
+            padding: 45px 10px
+
+            &:not(:last-child)
+                margin-right: 10px
+            &:hover
+                color: $main
+            &.active
+                color: $white
+                background-color: $accent
+div.content-wrap
+    display: block
+    margin: 0 auto
+    max-width: 1280px
+    padding: 15px
+    div.content
+        width: 100%
+
+
+@media all and (max-width: 1920px) 
+    
+        
